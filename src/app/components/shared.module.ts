@@ -4,10 +4,11 @@ import { IonicModule } from '@ionic/angular';
 import { InputComponent } from './input/input.component';
 import { ButtonComponent } from '../button/button.component';
 import { IconButtonComponent } from '../icon-button/icon-button.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
-    declarations: [InputComponent ,ButtonComponent, IconButtonComponent],
+    declarations: [InputComponent ,ButtonComponent, IconButtonComponent,ToolbarComponent],
     imports: [CommonModule, IonicModule],
-    exports: [InputComponent,ButtonComponent, IconButtonComponent],
+    exports: [InputComponent,ButtonComponent, IconButtonComponent,ToolbarComponent],
   })
   export class SharedModule {}
