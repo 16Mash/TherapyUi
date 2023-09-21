@@ -1,19 +1,37 @@
-
 <ion-content [fullscreen]="true">
-  
+
   <div class="w-full  m-auto">
 
-    <div class="bg-blue-600 w-full h-[30vh] rounded-b-[50%] relative">
-      
-        <img class="relative bottom-0  h-20 w-36" src="assets/images/avatar.png" />
-    
+    <div class="bg-blue-600 shadow-2xl bg-opacity-70 w-full h-[30vh] rounded-b-[50%] relative">
+
+      <img class="mx-auto absolute left-1/2 transform -translate-x-1/2 -bottom-[15%] rounded-full  h-36 w-36"
+        src="assets/images/avatar.png" />
+
     </div>
     <br>
-    <div class="w-11/12 m-auto" >
+    <div class="w-11/12 m-auto">
 
-      <div class="border border-blue-600">
-        <ion-icon slot="start" name="person"></ion-icon>
-      </div>
+      <ion-button fill="outline">
+        <ion-icon slot="start" name="create-outline"></ion-icon>
+        Edit Details
+      </ion-button>
+
+
+      <<ion-button fill="outline" >
+        <ion-icon slot="start" name="lock-open-outline"></ion-icon>
+        Change Password
+      </ion-button>
+    
+      
+        <div class="mt-[5%] shadow rounded-lg border- border-red-600 p-[2%] w-full flex flex-wrap">
+          <div class="border w-fit p-[1%]  rounded-md border-blue-600">
+            <ion-icon class="text-blue-400 m-auto w-7  h-7" slot="start" name="person"></ion-icon>
+          </div>
+          <ion-text class="my-auto mx-[2%]" color="primary">
+            <p class="font-semibold text-lg">Stuurman Ramaila</p>
+          </ion-text>
+        </div>
+   
 
     </div>
   </div>
