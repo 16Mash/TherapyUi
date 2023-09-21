@@ -1,38 +1,40 @@
 <ion-content [fullscreen]="true">
 
-  <div class="w-full  m-auto">
+  <div class="w-full bg-purple-100 h-full">
 
-    <div class="bg-blue-600 shadow-2xl bg-opacity-70 w-full h-[30vh] rounded-b-[50%] relative">
+    <div class="bg-therapyBlue shadow-2xl  w-full h-[30vh] rounded-b-[50%] relative">
 
       <img class="mx-auto absolute left-1/2 transform -translate-x-1/2 -bottom-[15%] rounded-full  h-36 w-36"
         src="assets/images/avatar.png" />
 
     </div>
     <br>
-    <div class="w-11/12 m-auto">
-
-      <ion-button fill="outline">
-        <ion-icon slot="start" name="create-outline"></ion-icon>
-        Edit Details
-      </ion-button>
-
-
-      <<ion-button fill="outline" >
-        <ion-icon slot="start" name="lock-open-outline"></ion-icon>
-        Change Password
-      </ion-button>
-    
+    <div class="w-[92%] m-auto">
       
-        <div class="mt-[5%] shadow rounded-lg border- border-red-600 p-[2%] w-full flex flex-wrap">
-          <div class="border w-fit p-[1%]  rounded-md border-blue-600">
-            <ion-icon class="text-blue-400 m-auto w-7  h-7" slot="start" name="person"></ion-icon>
-          </div>
-          <ion-text class="my-auto mx-[2%]" color="primary">
-            <p class="font-semibold text-lg">Stuurman Ramaila</p>
-          </ion-text>
-        </div>
-   
 
+
+
+      <div class=" float-right mt-[5%]">
+        <app-outline-btn icon="add" text="Edit Details" />
+      </div>
+      
+      <div class="w-full flex-wrap my-4 flex">
+        <div   class="w-1/2 ">
+          <div class="w-[95%] border-2 rounded-lg shadow-xl bg-white bg-opacity-30 border-therapyBlue ">
+            <img class="cover w-3/5 m-auto" src="assets/images/sessions.png" alt="">
+            <p class="font-bold m-auto text-center text-therapyBlue">Sessions</p>
+          </div>
+          
+        </div>
+
+        <div  class="w-1/2 border rounded border-therapyBlue">
+          <p>Text</p>
+        </div>
+      </div>
+   
+      <app-user-details text="Stuurman Ramaila" icon="person-outline"/>
+      <app-user-details text="ramailaStuurman@gmail.com" icon="mail-outline"/>
+      <app-user-details text="076 9128 975" icon="call-outline"/>
     </div>
   </div>
 
