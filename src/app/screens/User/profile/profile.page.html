@@ -1,6 +1,6 @@
-<ion-content [fullscreen]="true">
+<ion-content color="white" [fullscreen]="true">
 
-  <div class="w-full bg-purple-100 h-full">
+  <div class="w-full  h-full">
 
     <div class="bg-therapyBlue shadow-2xl  w-full h-[30vh] rounded-b-[50%] relative">
 
@@ -10,31 +10,31 @@
     </div>
     <br>
     <div class="w-[92%] m-auto">
-      
-
-
-
       <div class=" float-right mt-[5%]">
         <app-outline-btn icon="add" text="Edit Details" />
       </div>
-      
+
       <div class="w-full flex-wrap my-4 flex">
-        <div   class="w-1/2 ">
-          <div class="w-[95%] border-2 rounded-lg shadow-xl bg-white bg-opacity-30 border-therapyBlue ">
+        <div class="w-1/2 ">
+          <div class="w-[95%] border-2 rounded-lg shadow-xl bg-purple-100 bg-opacity-30 border-therapyBlue ">
             <img class="cover w-3/5 m-auto" src="assets/images/sessions.png" alt="">
             <p class="font-bold m-auto text-center text-therapyBlue">Sessions</p>
           </div>
-          
         </div>
 
-        <div  class="w-1/2 border rounded border-therapyBlue">
+        <div class="w-1/2 border rounded border-therapyBlue">
           <p>Text</p>
         </div>
       </div>
-   
-      <app-user-details text="Stuurman Ramaila" icon="person-outline"/>
-      <app-user-details text="ramailaStuurman@gmail.com" icon="mail-outline"/>
-      <app-user-details text="076 9128 975" icon="call-outline"/>
+      <div class="mt-[2%]">
+        <app-user-details text="Stuurman Ramaila" icon="person-outline" />
+        <app-user-details text="ramailaStuurman@gmail.com" icon="mail-outline" />
+        <app-user-details text="076 9128 975" icon="call-outline" />
+        <app-user-details text="Male" icon="male-female-outline" />
+        <app-user-details text="1996-March-08" icon="calendar-number-outline" />
+        
+      </div>
+      <app-outline-btn text="Change Password" icon="lock-outline" />
     </div>
   </div>
 
