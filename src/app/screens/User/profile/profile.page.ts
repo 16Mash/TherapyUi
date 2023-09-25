@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -6,9 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  constructor() { }
+  constructor( private _navigatoion :NavController) { }
 
   ngOnInit() {
+  }
+
+  navigate(url:any){
+    this._navigatoion.navigateForward(url)
   }
 
 }

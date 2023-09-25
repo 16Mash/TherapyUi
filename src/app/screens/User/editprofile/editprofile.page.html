@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>editprofile</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-toolbar title="Edit Profile" />
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">editprofile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content  [fullscreen]="true">
+ 
+  <div  class="w-11/12 space-x-[1px] m-auto">
+    <br>
+    <app-outlined-input label="First Name(s)" placeholder="Enter Full Names" />
+    <app-outlined-input label="Last Name" placeholder="Enter Last Names" />
+    <app-outlined-input label="Phone No" placeholder="Enter Phone no" />
+    <br>
+
+    <ion-button color="primary" expand="block" >
+      Update
+    </ion-button>
+   
+  </div>
+ 
+ 
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-outlined-input',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutlinedInputComponent  implements OnInit {
 
+  @Input() label :string | undefined;
+  @Input() placeholder:String |undefined;
   constructor() { }
 
   ngOnInit() {}

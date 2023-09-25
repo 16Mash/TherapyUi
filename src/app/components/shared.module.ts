@@ -32,7 +32,8 @@ import { TextButtonComponent } from './Buttons/text-button/text-button.component
     UserDetailsComponent,
     OutlineBtnComponent,
     RoundbtnComponent,
-    TextButtonComponent
+    TextButtonComponent,
+    ToolbarComponent
   ],
 })
 export class SharedModule {}

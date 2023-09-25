@@ -25,6 +25,14 @@ const routes: Routes = [
   {
     path: 'editprofile',
     loadChildren: () => import('./screens/User/editprofile/editprofile.module').then( m => m.EditprofilePageModule)
+  },
+  {
+    path: 'changepassword',
+    loadChildren: () => import('./screens/changepassword/changepassword.module').then( m => m.ChangepasswordPageModule)
+  },
+  {
+    path: 'resetpasword',
+    loadChildren: () => import('./screens/resetpasword/resetpasword.module').then( m => m.ResetpaswordPageModule)
   }
 
 

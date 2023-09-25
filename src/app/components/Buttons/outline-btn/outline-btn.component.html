@@ -1,4 +1,6 @@
-<ion-button  fill="outline">
-  <ion-icon slot="start" name="{{icon}}"></ion-icon>
- {{text}}
+<ion-button expand="block" (click)="onClick.emit()" fill="outline">
+  <ng-container *ngIf="icon">
+    <ion-icon slot="start" name="{{icon}}"></ion-icon>
+  </ng-container>
+  {{text}}
 </ion-button>

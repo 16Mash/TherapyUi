@@ -9,6 +9,7 @@ export class OutlineBtnComponent  implements OnInit {
 
   @Input() text:string|undefined;
   @Input() icon:string|undefined;
+  @Input() hasIcon:boolean=false;
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }

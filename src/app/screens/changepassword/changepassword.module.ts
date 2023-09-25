@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EditprofilePageRoutingModule } from './editprofile-routing.module';
+import { ChangepasswordPageRoutingModule } from './changepassword-routing.module';
 
-import { EditprofilePage } from './editprofile.page';
+import { ChangepasswordPage } from './changepassword.page';
 import { SharedModule } from 'src/app/components/shared.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { SharedModule } from 'src/app/components/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    EditprofilePageRoutingModule,
+    ChangepasswordPageRoutingModule,
     SharedModule
   ],
-  declarations: [EditprofilePage]
+  declarations: [ChangepasswordPage]
 })
-export class EditprofilePageModule {}
+export class ChangepasswordPageModule {}
