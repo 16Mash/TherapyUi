@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'resetpasword',
     loadChildren: () => import('./screens/resetpasword/resetpasword.module').then( m => m.ResetpaswordPageModule)
+  },
+  {
+    path: 'doctordetails',
+    loadChildren: () => import('./screens/doctor/doctordetails/doctordetails.module').then( m => m.DoctordetailsPageModule)
   }
 
 

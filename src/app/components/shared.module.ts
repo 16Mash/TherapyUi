@@ -10,6 +10,7 @@ import { OutlinedInputComponent } from './outlined-input/outlined-input.componen
 import { UserDetailsComponent } from './Cards/user-details/user-details.component';
 import { OutlineBtnComponent } from './Buttons/outline-btn/outline-btn.component';
 import { TextButtonComponent } from './Buttons/text-button/text-button.component';
+import { DayitemComponent } from './dayitem/dayitem.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TextButtonComponent } from './Buttons/text-button/text-button.component
     UserDetailsComponent,
     OutlineBtnComponent,
     RoundbtnComponent,
-    TextButtonComponent
+    TextButtonComponent,
+    DayitemComponent
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -33,7 +35,9 @@ import { TextButtonComponent } from './Buttons/text-button/text-button.component
     OutlineBtnComponent,
     RoundbtnComponent,
     TextButtonComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    DayitemComponent
   ],
 })
 export class SharedModule {}
+ 

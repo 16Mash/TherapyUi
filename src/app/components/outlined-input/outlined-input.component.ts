@@ -9,6 +9,7 @@ export class OutlinedInputComponent  implements OnInit {
 
   @Input() label :string | undefined;
   @Input() placeholder:String |undefined;
+  @Input() keyboardOnption:string|undefined;
   constructor() { }
 
   ngOnInit() {}
