@@ -1,25 +1,169 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div class="container">
+      <p class="greeting">Hi Rams,</p>
+      <div class="profile-pic">
+       <li routerLink="/profile"> <img src="assets/images/rams.jpeg" class="cover"></li>
+      </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <h1>Are you ready 
+    to talk?</h1>
 
-  <div id="container">
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    <app-outlined-input/>
-    
+   
+  <ion-searchbar show-clear-button="focus" placeholder="search"></ion-searchbar>
+ 
+
+  <div class="wrapper">  
+    <app-button label ="Therapist"></app-button>
+    <app-button label ="Podriatrist"></app-button>
+    <app-button label = "Physiologist"></app-button>
   </div>
+  <h1 class="book">Book Now</h1>
+<!-- Doctor Details -->
+
+  <div class="doc-list">
+    <div class="block">
+    <div class="imgbx">
+      <img src="assets/images/therapist.jpg" class="cover">
+    </div>
+   
+    <div class="doc-details">
+      <div class="type">
+        <p>Therapist</p>
+      </div>
+      <div class="name-time">
+      <h4>Dr Aubrey Mashaba</h4>
+
+      <ion-icon icon ="time"></ion-icon>
+      <p class ="time">14:05 - 16:30</p>
+  
+    </div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="imgbx">
+      <img src="assets/images/pod.jpg" class="cover">
+    </div>
+   
+    <div class="doc-details">
+      <div class="type">
+        <p>Podriatrist</p>
+      </div>
+      <div class="name-time">
+      <h4>Dr Patience Shivambhu</h4>
+
+      <ion-icon icon ="time"></ion-icon>
+      <p class ="time">15:25 - 17:36</p>
+  
+      
+    </div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="imgbx">
+      <img src="assets/images/rams.jpeg" class="cover">
+    </div>
+   
+    <div class="doc-details">
+      <div class="type">
+        <p>Physiologist</p>
+      </div>
+      <div class="name-time">
+      <h4>Dr Morena Maphosa</h4>
+
+      <ion-icon icon ="time"></ion-icon>
+      <p class ="time">15:25 - 17:36</p>
+  
+      
+    </div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="imgbx">
+      <img src="assets/images/pod.jpg" class="cover">
+    </div>
+   
+    <div class="doc-details">
+      <div class="type">
+        <p>Physiologist</p>
+      </div>
+      <div class="name-time">
+      <h4>Dr Andries Kunutu</h4>
+
+      <ion-icon icon ="time"></ion-icon>
+      <p class ="time">15:25 - 17:36</p>
+  
+      
+    </div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="imgbx">
+      <img src="assets/images/rams.jpeg" class="cover">
+    </div>
+   
+    <div class="doc-details">
+      <div class="type">
+        <p>Physiologist</p>
+      </div>
+      <div class="name-time">
+      <h4>Dr Morena Maphosa</h4>
+
+      <ion-icon icon ="time"></ion-icon>
+      <p class ="time">15:25 - 17:36</p>
+  
+      
+    </div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="imgbx">
+      <img src="assets/images/rams.jpeg" class="cover">
+    </div>
+   
+    <div class="doc-details">
+      <div class="type">
+        <p>Physiologist</p>
+      </div>
+      <div class="name-time">
+      <h4>Dr Morena Maphosa</h4>
+
+      <ion-icon icon ="time"></ion-icon>
+      <p class ="time">15:25 - 17:36</p>
+  
+      
+    </div>
+    </div>
+  </div>
+</div>
+
+<ion-tabs>
+  <ul class="menu">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-icon name="person"></ion-icon>
+      
+    </ion-tab-button>
+    <ion-tab-button tab="chat">
+      <ion-icon name="chatbubble"></ion-icon>
+      
+    </ion-tab-button>
+    <ion-tab-button tab="settings">
+      <ion-icon name="settings"></ion-icon>
+      
+    </ion-tab-button>
+  </ion-tab-bar>
+</ul>
+</ion-tabs>
+
+
+
+
+<div class="tab"></div>
+
+</div>
 </ion-content>
