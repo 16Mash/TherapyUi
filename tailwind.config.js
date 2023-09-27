@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors:{
         'therapyBlue':'#49467E',
-        'therapyLight':'#9491d8E',
+        'therapyLight':'#a29ef1',
         'white': '#ffffff',
         'purple':{
           100:'#f3e8ff'

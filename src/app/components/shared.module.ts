@@ -23,7 +23,8 @@ import { DayitemComponent } from './dayitem/dayitem.component';
     OutlineBtnComponent,
     RoundbtnComponent,
     TextButtonComponent,
-    DayitemComponent
+    DayitemComponent,
+    
   ],
   imports: [CommonModule, IonicModule],
   exports: [

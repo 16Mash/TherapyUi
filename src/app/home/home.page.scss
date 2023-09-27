@@ -8,11 +8,7 @@ margin: auto;
 
 
 //text Styles
-h1{
-margin-bottom: 10px;
-font-size: 45px;
-font-weight: 700;
-}
+
 .book{
   margin-top: 2%;
   margin-bottom: 10px;
@@ -63,7 +59,7 @@ background-color: #ddd;
 }
  .profile-pic{
   right: 2%;
-  top: 2%;
+  top: 5%;
   position: absolute;
   width:40px;
   height: 40px;
@@ -83,6 +79,7 @@ background-color: #ddd;
   }
   
   .doc-list .block{
+  margin-top: 5px;
   position: relative;
   width: 100%;
   display: flex;
@@ -90,14 +87,12 @@ background-color: #ddd;
   padding: 10px;
   border-bottom: 1px solid rgba(0,0,0,0.06);
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   border-color: #111;
   box-shadow: #111;
 
   }
-  .doc-list .block:hover{
-    background: #acaaaa;
-    }
+ 
   .doc-list .block .imgbx{
     position: relative;
     min-width: 60px;
@@ -128,4 +123,9 @@ background-color: #ddd;
   color: #aaa;
   left: 18px;
   bottom: 7px;
+  }
+
+  ion-searchbar{
+  
+    --border-radius:40px;
   }

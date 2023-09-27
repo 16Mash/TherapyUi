@@ -13,7 +13,7 @@ export class ProfilePage implements OnInit {
   }
 
   navigate(url:any){
-    this._navigatoion.navigateForward(url)
+    this._navigatoion.navigateForward("/user/profile"+url)
   }
 
 }
