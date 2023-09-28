@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CommunityPageRoutingModule } from './community-routing.module';
+import { SessionsPageRoutingModule } from './sessions-routing.module';
 
-import { CommunityPage } from './community.page';
+import { SessionsPage } from './sessions.page';
 import { SharedModule } from 'src/app/components/shared.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { SharedModule } from 'src/app/components/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    CommunityPageRoutingModule,
+    SessionsPageRoutingModule,
     SharedModule
   ],
-  declarations: [CommunityPage]
+  declarations: [SessionsPage]
 })
-export class CommunityPageModule {}
+export class SessionsPageModule {}

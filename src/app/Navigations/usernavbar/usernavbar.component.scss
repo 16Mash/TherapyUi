@@ -1,0 +1,12 @@
+/* Hide tab labels by default */
+/* Hide tab labels by default */
+ion-tabs ion-tab-bar ion-tab-button .ion-label {
+    display: none !important;
+  }
+  
+  /* Display the label of the currently active tab */
+  ion-tabs ion-tab-bar ion-tab-button[aria-selected="true"] .ion-label {
+    display: block !important;
+  }
+  
+  

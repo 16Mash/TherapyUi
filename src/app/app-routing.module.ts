@@ -24,11 +24,19 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
       },
       {
-        path: 'profile',
+        path: 'home/profile',
         loadChildren: () => import('./screens/User/profile/profile.module').then( m => m.ProfilePageModule)
       },
       {
-        path: 'profile/editprofile',
+        path: 'sessions',
+        loadChildren: () => import('./screens/sessions/sessions.module').then( m => m.SessionsPageModule)
+      },
+      {
+        path: 'notifications',
+        loadChildren: () => import('./screens/notifications/notifications.module').then( m => m.NotificationsPageModule)
+      },
+      {
+        path: 'home/profile/editprofile',
         loadChildren: () => import('./screens/User/editprofile/editprofile.module').then( m => m.EditprofilePageModule)
       },
       {
@@ -39,10 +47,7 @@ const routes: Routes = [
         path: 'community',
         loadChildren: () => import('./screens/community/community.module').then( m => m.CommunityPageModule)
       },
-      {
-        path: 'settings',
-        loadChildren: () => import('./screens/settings/settings.module').then( m => m.SettingsPageModule)
-      }
+    
     ]
   },
   {
@@ -61,10 +66,11 @@ const routes: Routes = [
     path: 'doctordetails',
     loadChildren: () => import('./screens/doctor/doctordetails/doctordetails.module').then( m => m.DoctordetailsPageModule)
   },
-
-
-
-
+  {
+    path: 'settings',
+    loadChildren: () => import('./screens/settings/settings.module').then( m => m.SettingsPageModule)
+  }
+ 
 ];
 
 @NgModule({

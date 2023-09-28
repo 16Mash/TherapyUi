@@ -1,22 +1,23 @@
-<ion-tabs>
-  <ul class="menu">
-  <ion-tab-bar slot="bottom">
+<ion-router-outlet></ion-router-outlet>
+<ion-tabs   >
+
+  <ion-tab-bar (ionChange)="tabChanged($event)" slot="bottom">
     <ion-tab-button tab="home">
       <ion-icon name="home"></ion-icon>
       
     </ion-tab-button>
-    <ion-tab-button tab="profile">
-      <ion-icon name="person"></ion-icon>
-      
+    <ion-tab-button tab="sessions">
+      <ion-icon name="videocam"></ion-icon>
+
     </ion-tab-button>
     <ion-tab-button tab="community">
-      <ion-icon name="chatbubble"></ion-icon>
+      <ion-icon name="chatbubbles"></ion-icon>
       
     </ion-tab-button>
-    <ion-tab-button tab="settings">
-      <ion-icon name="settings"></ion-icon>
+    <ion-tab-button tab="notifications">
+      <ion-icon name="notifications"></ion-icon>
       
     </ion-tab-button>
   </ion-tab-bar>
-</ul>
+
 </ion-tabs>

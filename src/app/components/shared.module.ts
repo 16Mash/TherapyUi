@@ -1,3 +1,4 @@
+import { CommunityCardComponent } from './Cards/community-card/community-card.component';
 import { RoundbtnComponent } from './Buttons/roundbtn/roundbtn.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,6 +12,7 @@ import { UserDetailsComponent } from './Cards/user-details/user-details.componen
 import { OutlineBtnComponent } from './Buttons/outline-btn/outline-btn.component';
 import { TextButtonComponent } from './Buttons/text-button/text-button.component';
 import { DayitemComponent } from './dayitem/dayitem.component';
+import { SessionCardComponent } from './Cards/session-card/session-card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { DayitemComponent } from './dayitem/dayitem.component';
     RoundbtnComponent,
     TextButtonComponent,
     DayitemComponent,
+    SessionCardComponent,
+    CommunityCardComponent
     
   ],
   imports: [CommonModule, IonicModule],
@@ -37,7 +41,9 @@ import { DayitemComponent } from './dayitem/dayitem.component';
     RoundbtnComponent,
     TextButtonComponent,
     ToolbarComponent,
-    DayitemComponent
+    DayitemComponent,
+    SessionCardComponent,
+    CommunityCardComponent,
   ],
 })
 export class SharedModule {}
