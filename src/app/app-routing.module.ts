@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { UsernavbarComponent } from './Navigations/usernavbar/usernavbar.component';
+import { DocternavbarComponent } from './Navigations/docternavbar/docternavbar.component';
 
 const routes: Routes = [
 
@@ -50,6 +51,35 @@ const routes: Routes = [
     
     ]
   },
+
+  {
+    path:'docter',
+    component:DocternavbarComponent,
+    children:[
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home',
+
+      },
+      {
+        path: 'home',
+        loadChildren: () => import('./screens/doctor/doctorhome/doctorhome.module').then( m => m.DoctorhomePageModule)
+      },
+      {
+        path: 'notifications',
+        loadChildren: () => import('./screens/notifications/notifications.module').then( m => m.NotificationsPageModule)
+      },
+      {
+        path: 'community',
+        loadChildren: () => import('./screens/community/community.module').then( m => m.CommunityPageModule)
+      },
+      {
+        path: 'sessions',
+        loadChildren: () => import('./screens/sessions/sessions.module').then( m => m.SessionsPageModule)
+      },
+    ]
+  },
   {
     path: 'login',
     loadChildren: () => import('./screens/login/login.module').then( m => m.LoginPageModule)
@@ -70,10 +100,7 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: () => import('./screens/settings/settings.module').then( m => m.SettingsPageModule)
   },
-  {
-    path: 'doctorhome',
-    loadChildren: () => import('./screens/doctor/doctorhome/doctorhome.module').then( m => m.DoctorhomePageModule)
-  }
+ 
 
  
 ];
