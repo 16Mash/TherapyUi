@@ -11,4 +11,15 @@ export class DocternavbarComponent  implements OnInit {
 
   ngOnInit() {}
 
+  selectedTab: string = 'home'; // Set the default selected tab
+
+  // Function to update the selected tab
+  selectTab(tab: string) {
+    this.selectedTab = tab;
+  }
+  tabChanged(event: any) {
+    this.selectedTab = event.tab;
+    console.log("clicked:"+event.tab)
+  }
+
 }

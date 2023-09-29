@@ -69,7 +69,12 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: () => import('./screens/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'doctorhome',
+    loadChildren: () => import('./screens/doctor/doctorhome/doctorhome.module').then( m => m.DoctorhomePageModule)
   }
+
  
 ];
 
