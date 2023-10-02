@@ -37,26 +37,24 @@
 
     <div class="w-full my-2 flex - flex-wrap">
       <div class="w-1/4">
-        <div
-          class="w-16 m-auto rounded-full h-16 bg-therapyLight bg-opacity-70"
-        >
-          <div class="w-fit border m-auto">
-            <ion-icon size="large" slot="icon-only" name="add"></ion-icon>
+        <div class="w-16 m-auto rounded-full h-16 bg-therapyLight bg-opacity-70">
+          <div class="w-fit h-fit py-3 m-auto ">
+            <ion-icon size="large" color="light" slot="icon-only" name="star"></ion-icon>
           </div>
         </div>
         <ion-text class="ion-text-center" color="primary">
-          <h1 class="mt-2">Ratings</h1>
+          <h1 class="mt-2 font-bold">5.0</h1>
+          <h1 class="mt-1">Ratings</h1>
         </ion-text>
       </div>
       <div class="w-1/4">
-        <div
-          class="w-16 m-auto rounded-full h-16 bg-therapyLight bg-opacity-70"
-        >
-          <div class="w-fit border m-auto">
-            <ion-icon size="large" slot="icon-only" name="add"></ion-icon>
+        <div  class="w-16 m-auto rounded-full h-16 bg-therapyLight bg-opacity-70"  >
+          <div class="w-fit py-3 m-auto">
+            <ion-icon color="light" size="large" slot="icon-only" name="briefcase"></ion-icon>
           </div>
         </div>
         <ion-text class="ion-text-center" color="primary">
+          <h1 class="mt-2 font-bold">5.0</h1>
           <h1 class="mt-2">Exp</h1>
         </ion-text>
       </div>
@@ -64,11 +62,12 @@
         <div
           class="w-16 m-auto rounded-full h-16 bg-therapyLight bg-opacity-70"
         >
-          <div class="w-fit border m-auto">
-            <ion-icon size="large" slot="icon-only" name="add"></ion-icon>
+          <div class="w-fit py-3 m-auto">
+            <ion-icon color="light" size="large" slot="icon-only" name="people"></ion-icon>
           </div>
         </div>
         <ion-text class="ion-text-center" color="primary">
+          <h1 class="mt-2 font-bold">5.0</h1>
           <h1 class="mt-2">Patients</h1>
         </ion-text>
       </div>
@@ -76,16 +75,15 @@
         <div
           class="w-16 m-auto rounded-full h-16 bg-therapyLight bg-opacity-70"
         >
-          <div class="w-fit border m-auto">
-            <ion-icon size="large" slot="icon-only" name="add"></ion-icon>
+          <div class="w-fit  py-3 m-auto">
+            <ion-icon color="light" size="large" slot="icon-only" name="logo-wechat"></ion-icon>
           </div>
         </div>
         <ion-text class="ion-text-center" color="primary">
+          <h1 class="mt-2 font-bold">5.0</h1>
           <h1 class="mt-2">Reviews</h1>
         </ion-text>
       </div>
-
-     
     </div>
 
     <div class="mt-[1%]">
@@ -115,6 +113,25 @@
         <app-dayitem day="Sunday" time="08:00-16:00" />
       </ion-list>
     </div>
+
+    <div class="mt-[2%]">
+      <ion-text color="primary">
+        <h1 class="font-bold">Reviews</h1>
+      </ion-text>
+  
+      <ion-list>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="assets/images/avatar.png" />
+          </ion-avatar>
+          <ion-label>
+            <p class="font-bold" >Mahlatse Mashala </p>
+            <p class="text-sm text-gray-400">The best therapist i have ever had</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
   </div>
 
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
@@ -131,3 +148,7 @@
     </ion-fab-list>
   </ion-fab>
 </ion-content>
+<ion-footer>
+
+  <app-button label="Book a Sessions" />
+</ion-footer>
