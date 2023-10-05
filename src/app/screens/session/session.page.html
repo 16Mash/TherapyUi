@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/chat-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ contactName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <div class="w-11/12 mx-auto my-[2%]" *ngFor="let message of messages" [class.sender]="message.sender === 'user'">
+    <div class=" h-fit my-1 float-left w-full ">
+      <div class="message-bubble p-[10px] rounded-xl  w-fit w-max-[70%]">
+        <p class="text-white"> {{message.text}} </p>
+        <p class="text-xs w-full text-right">{{ message.timestamp | date:'mediumTime' }}</p>
+      </div>
+    </div>
+  </div> 
+
+</ion-content>
+
+<div class="flex p-[10px] items-center">
+  <ion-input class="border rounded-full !px-4" [(ngModel)]="newMessage"
+    placeholder="Type your message"></ion-input> 
+  <ion-button class="" fill="clear" shape="round" (click)="sendMessage()" >
+    
+   
+     <ion-icon *ngIf="newMessage.length>0;"  slot="icon-only" name="send-sharp"></ion-icon>
+     <ion-icon *ngIf="newMessage.length==0;"  slot="icon-only" name="mic"></ion-icon>
+
+  </ion-button>
+</div>

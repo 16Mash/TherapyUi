@@ -1,0 +1,22 @@
+ion-content {
+    --background: #f0f0f0;
+ 
+  }
+  
+  
+  .message-bubble {
+    background-color: #a29ef1;
+    color: #fff;
+  }
+  
+  .sender .message-bubble {
+    float: right;
+    background-color: #49467E;
+  }
+  
+  ion-button {
+    --border-radius: 50% !important;
+    // width: 50px;
+    // height: 50px;
+
+  }

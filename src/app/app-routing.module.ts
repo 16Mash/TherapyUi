@@ -99,7 +99,11 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: () => import('./screens/settings/settings.module').then( m => m.SettingsPageModule)
+  },  {
+    path: 'session',
+    loadChildren: () => import('./screens/session/session.module').then( m => m.SessionPageModule)
   },
+
  
 
  
