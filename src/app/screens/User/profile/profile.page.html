@@ -1,6 +1,6 @@
 <ion-content color="white">
 
-  <div class="w-full   h-full">
+  <div class="w-full   h-full" *ngIf="user">
 
     <div class="bg-therapyBlue shadow-2xl  w-full h-[30vh] rounded-b-[50%] relative">
 
@@ -27,9 +27,9 @@
         </div>
       </div>
       <div class="mt-[2%]">
-        <app-user-details text="Stuurman Ramaila" icon="person-outline" />
-        <app-user-details text="ramailaStuurman@gmail.com" icon="mail-outline" />
-        <app-user-details text="076 9128 975" icon="call-outline" />
+        <app-user-details text={{user.names}} icon="person-outline" />
+        <app-user-details text={{user.email}} icon="mail-outline" />
+        <app-user-details text="{{user.phone}}" icon="call-outline" />
         <app-user-details text="Male" icon="male-female-outline" />
         <app-user-details text="1996-March-08" icon="calendar-number-outline" />
         

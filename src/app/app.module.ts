@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import {AngularFireStorageModule} from '@angular/fire/compat/storage';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent,UsernavbarComponent,DocternavbarComponent],
@@ -24,6 +25,7 @@ import {AngularFireStorageModule} from '@angular/fire/compat/storage';
      AngularFireAuthModule,
      AngularFirestoreModule,
      AngularFireStorageModule,
+     ReactiveFormsModule
     ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

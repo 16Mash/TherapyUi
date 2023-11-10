@@ -1,5 +1,16 @@
-<div class="form-field">
+<div class="form-field"  [formGroup]="parentForm" >
   <label [ngClass]="focused ? 'label-focused' : ''">{{label}}</label>
-<input [type]="type" (focus)="focused = true " (blur)="onBlur($event)"/>
+<input [formControlName]="controlName"   [type]="type" (focus)="focused = true " (blur)="onBlur($event)"/>
 
 </div>
+<div *ngIf="parentForm.controls[controlName].invalid && parentForm.controls[controlName].touched" class="ml-2 font-light text-red-600 justify-start space-y-0">
+  <div class="text-start" >
+   <p *ngIf="parentForm.get(controlName)!.hasError('required')">{{label}} is required.</p>
+   <p *ngIf="parentForm.get(controlName)!.hasError('invalidName')&&  !parentForm.get(controlName)!.hasError('required')"  >{{label}} is not valid.</p> 
+   <p *ngIf="parentForm.get(controlName)!.hasError('email')">Invalid email address.</p>
+   <p *ngIf="parentForm.get(controlName)!.hasError('maxLength')&&  !parentForm.get(controlName)!.hasError('required')"  >{{label}} is not valid.</p> 
+   <p *ngIf="parentForm.get(controlName)!.hasError('minLength')"  >{{label}} is not .</p> 
+ 
+  </div> 
+ 
+ </div>

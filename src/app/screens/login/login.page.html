@@ -1,17 +1,22 @@
 <ion-content class="ion-padding">
-<!-- <h1>Welcome</h1> -->
-<img src="assets/logo.png" >
-<h3>Sign in to continue</h3>
+    <!-- <h1>Welcome</h1> -->
+    <div class="h-full w-full flex flex-col justify-center items-center m-auto">
+        <img class="h-16" src="assets/logo.png">
+        <h3>Sign in to continue</h3>
 
-<form>
-<app-input label="Email Address"></app-input>
-<app-input label="Password" type="Password"></app-input>
-<a routerLink ="#" class="forgot-password-link">Forgot password?</a>
+        <form [formGroup]="loginForm" class="w-full mt-12">
+            <app-input  controlName="email" [parentForm]="loginForm" type="email" label="Email Address"></app-input>
+            <app-input controlName="password" [parentForm]="loginForm" label="Password" type="Password"></app-input>
+            <a routerLink="#" class="forgot-password-link">Forgot password?</a>
 
-<app-button routerLink="/home" label="Login" ></app-button>
-<app-icon-button icon ="logo-facebook" label="Log in with facebook"></app-icon-button>
-</form>
+            <app-button (click)="login()" label="Login"></app-button>
+            <app-icon-button icon="logo-facebook" label="Log in with facebook"></app-icon-button>
+        </form>
 
 
-<p class="footer-text">I'm a new user, <a routerLink="/register">Sign Up</a></p>
+        <p class="footer-text mt-6">I'm a new user, <a routerLink="/register">Sign Up</a></p>
+   
+    </div>
+
+
 </ion-content>

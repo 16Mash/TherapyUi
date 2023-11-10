@@ -2,14 +2,13 @@
   <h1>Create Account</h1>
   <h3>Sign up to get started</h3>
   
-  <form>
-  <app-input label="Full Name"></app-input>
-  <app-input label="Email Address"></app-input>
-  <app-input label="Contact Number"></app-input>
-  <app-input label="Password" type="Password"></app-input>
-  <app-input label="Confirm Password" type="Password"></app-input>
+  <form [formGroup]="regsteForm" >
+  <app-input [parentForm]="regsteForm" controlName="FullName" label="Full Name"></app-input>
+  <app-input [parentForm]="regsteForm" controlName="email" [type]="'email'" label="Email Address"></app-input>
+  <app-input [parentForm]="regsteForm" controlName="phoneNo" label="Contact Number"></app-input>
+  <app-input [parentForm]="regsteForm" controlName="password" label="Password" type="Password"></app-input>
   
-  <app-button label="Sig Up" ></app-button>
+  <app-button (click)="createAccount()" label="Sig Up" ></app-button>
   <app-icon-button icon ="logo-facebook" label="Connect with facebook"></app-icon-button>
   </form>
   

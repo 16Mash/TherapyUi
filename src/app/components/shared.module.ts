@@ -13,6 +13,7 @@ import { OutlineBtnComponent } from './Buttons/outline-btn/outline-btn.component
 import { TextButtonComponent } from './Buttons/text-button/text-button.component';
 import { DayitemComponent } from './dayitem/dayitem.component';
 import { SessionCardComponent } from './Cards/session-card/session-card.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,10 +28,9 @@ import { SessionCardComponent } from './Cards/session-card/session-card.componen
     TextButtonComponent,
     DayitemComponent,
     SessionCardComponent,
-    CommunityCardComponent
-    
+    CommunityCardComponent,
   ],
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, FormsModule, ReactiveFormsModule],
   exports: [
     InputComponent,
     ButtonComponent,
@@ -47,4 +47,3 @@ import { SessionCardComponent } from './Cards/session-card/session-card.componen
   ],
 })
 export class SharedModule {}
- 
