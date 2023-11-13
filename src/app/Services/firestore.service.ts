@@ -61,7 +61,7 @@ export class FirestoreService {
           .doc(doc)
           .set({'title':'New request','msg':data.username+'Has requested a session'}).then(()=>{
             this.utils.dismiss()
-            this.utils.presentToast('top',"Booked")
+            this.utils.presentToast('top',"Succes")
           })
       });
   }
@@ -69,5 +69,36 @@ export class FirestoreService {
   countRequest(collection:any,uid:any,status:any,)
   {
     return this._AngularFirestore.collection(collection,ref=>ref.where("status",'==',status).where('docter','==',uid))
+  }
+  UserSessions(collection:any,uid:any,status:any,)
+  {
+    return this._AngularFirestore.collection(collection,ref=>ref.where("status",'==',status).where('user','==',uid))
+  }
+  chatService(uid:any,)
+  {
+    return this._AngularFirestore.collection("Sessions").doc(uid).collection("chat").valueChanges()
+  }
+  SentChat(uid:any,id:any,data:any)
+  {
+    return this._AngularFirestore.collection("Sessions").doc(uid).collection("chat").doc(id).set(data)
+  }
+
+  setDataUpdateNotification(collection: any, data: any, doc: any, docNotify: any,title:any,) {
+    this.utils.startspinner();
+  return  this._AngularFirestore
+      .collection(collection)
+      .doc(doc)
+      .update(data)
+      .then(() => {
+        this._AngularFirestore
+          .collection('Users')
+          .doc(docNotify)
+          .collection('Notification')
+          .doc(doc)
+          .set({'title':title,'msg':'The session has been '+data.status}).then(()=>{
+            this.utils.dismiss()
+            this.utils.presentToast('top',"Success")
+          })
+      });
   }
 }

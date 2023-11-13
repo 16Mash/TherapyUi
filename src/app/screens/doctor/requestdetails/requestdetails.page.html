@@ -14,6 +14,37 @@
       <p>Names :{{request.username}} </p>
       <p>Type  : {{request.type}}</p>
     </div>
-
+    <div>
+      <div class="w-full space-y-2">
+        <p class="text-center text-lg font-semibold text-gray-700">
+          Session date
+        </p>
+        <ion-datetime-button  datetime="startdate"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime [(ngModel)]="date" [showDefaultButtons]="true" presentation="date" [isDateEnabled]="isWeekday" id="startdate"
+              >
+            </ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </div>
+    </div>
+    <br>
+    <form [formGroup]="sessionForm" >
+    <ion-select formControlName="time" label="Select Time" label-placement="floating" fill="outline">
+      <div *ngFor="let item of hoursArray">
+        <ion-select-option value={{item}} >{{item}}</ion-select-option>
+      </div>
+    </ion-select>
+  </form>
+    <br>
+    <div class="w-full flex justify-evenly" >
+      <div class="w-1/2">
+        <app-icon-button (click)="reject()" label="Reject" />
+      </div>
+      <div class="w-1/2">
+        <app-button (click)="Accepts()" label="Accept" />
+      </div>
+    </div>
   </div>
 </ion-content>

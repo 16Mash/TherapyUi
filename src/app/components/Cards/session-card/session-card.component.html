@@ -5,12 +5,12 @@
   <div class="w-full flex flex-wrap">
     <img
       class="w-[50px] object-cover rounded-full border-2 border-therapyBlue h-[50px] my-auto"
-      src="{{image}}"
+      src="{{session.img}}"
     />
 
     <div class="mx-[4%] h-fit my-auto">
-      <p class="font-bold">{{ names }}</p>
-      <p>{{ session }} Session</p>
+      <p class="font-bold">{{ session.docterName }}</p>
+      <p>{{ session.type }} Session</p>
     </div>
   </div>
   <hr class="m-2" />
@@ -18,16 +18,16 @@
   <div class="flex flex-wrap text-therapyBlue">
     <div class="w-1/2 flex flex-wrap">
       <ion-icon class="my-auto text-lg" name="calendar-outline"></ion-icon>
-      <p class="my-auto mx-2 text-sm">{{ date }}</p>
+      <p class="my-auto mx-2 text-sm">{{  session.date |date:'dd-MM-YYYY' }}</p>
     </div>
     <div class="w-1/2 flex flex-wrap">
       <ion-icon class="my-auto text-lg" name="time-outline"></ion-icon>
-      <p class="my-auto mx-2 text-sm">{{ time }}</p>
+      <p class="my-auto mx-2 text-sm">{{ session.time }}</p>
     </div>
   </div>
 
   <div class="flex flex-wrap w-full mt-4">
-    <div class="flex flex-wrap w-full mt-4" *ngIf="isComing; else comp">
+    <div class="flex flex-wrap w-full mt-4" *ngIf="session.status==='Accepted' && session.type==='chat'; else comp">
       <div class="w-1/2">
         <ion-button> Reschedule </ion-button>
       </div>
@@ -40,7 +40,7 @@
         <ion-button> Re-Book</ion-button>
       </div>
       <div class="w-1/2">
-        <ion-button fill="clear" class="font-black"> Profile </ion-button>
+        <ion-button fill="clear" class="font-black"> history </ion-button>
       </div>
     </ng-template>
   </div>

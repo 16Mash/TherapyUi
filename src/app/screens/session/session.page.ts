@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
+import { FirestoreService } from 'src/app/Services/firestore.service';
+import { UtilsService } from 'src/app/Services/utils.service';
 
 @Component({
   selector: 'app-session',
@@ -9,9 +13,15 @@ export class SessionPage implements OnInit {
 
   chat:boolean=false;
   video:boolean=false;
-  call:boolean=false
+  call:boolean=false;
+  user: any;
+  comm:any;
+  comming:any;
+  request:any;
+  uid:any;
+  ref:any;
 
-  contactName = 'Dr Mashaba'; 
+  contactName = ''; 
   newMessage = '';
   messages: any[] = [
     { text: 'Hello!', sender: 'user', timestamp: new Date() },
@@ -20,20 +30,39 @@ export class SessionPage implements OnInit {
 
   ];
 
+ 
+  constructor(    private _utils: UtilsService,
+    private Database: FirestoreService,
+    private _auth: AuthService,
+    private _rout: ActivatedRoute,
+    private _route:Router) { }
+
+  ngOnInit() {
+    this.ref = this._rout.snapshot.paramMap.get('id');
+    this.uid= localStorage.getItem('thid');
+    console.log(this.ref);
+    this.Database.readDataById('Sessions', this.ref).subscribe((res) => {
+      console.log(res);
+      this.request = res;
+      this._utils.dismiss();
+    });
+    this.user = this._utils.getArray('thiduser');
+    console.log(this.user);
+    this.uid= localStorage.getItem('thid');
+  }
   sendMessage() {
     if (this.newMessage.trim() !== '') {
       const message = {
         text: this.newMessage,
-        sender: 'user',
+        sender: this.uid,
         timestamp: new Date(),
       };
-      this.messages.push(message);
-      this.newMessage = '';
+      this.Database.SentChat(this.ref,this._utils.gerateUid(),message).then(()=>{
+        this.messages.push(message);
+        this.newMessage = '';
+      })
+     
     }
-  }
-  constructor() { }
-
-  ngOnInit() {
   }
 
 }

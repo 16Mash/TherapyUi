@@ -105,7 +105,7 @@ const routes: Routes = [
     loadChildren: () => import('./screens/settings/settings.module').then( m => m.SettingsPageModule)
   },
   {
-    path: 'session',
+    path: 'session/:id',
     loadChildren: () => import('./screens/session/session.module').then( m => m.SessionPageModule)
   },
   {
@@ -128,6 +128,11 @@ const routes: Routes = [
     path: 'requestdetails/:id',
     loadChildren: () => import('./screens/doctor/requestdetails/requestdetails.module').then( m => m.RequestdetailsPageModule)
   },
+  {
+    path: 'upcomming',
+    loadChildren: () => import('./screens/doctor/upcomming/upcomming.module').then( m => m.UpcommingPageModule)
+  },
+
 
 
 

@@ -28,36 +28,24 @@
           [(ngModel)]="selectedSession"
         >
           <ion-select-option value="all">All Sessions</ion-select-option>
-          <ion-select-option value="oranges"
+          <ion-select-option value="Accepted"
             >Upcoming Sessions</ion-select-option
           >
-          <ion-select-option value="bananas"
+          <ion-select-option value="history"
             >Competed Sessions</ion-select-option
           >
         </ion-select>
       </ion-item>
     </ion-list>
 
+    
+  <div *ngFor="let item of request" >
     <app-session-card
-      names="Dr. Mash"
-      image="assets/images/thera.png"
-      session="Therapist"
-      date="28-09-2022"
-      time="19:00"
+    [session]="item.payload.doc.data()"
+
     />
-    <app-session-card [isComing]="false"
-    names="Dr. Rams"
-    image="assets/images/pys.jpg"
-    session="Pyschologist"
-    date="20-09-2022"
-    time="10:00"
-    />
-    <app-session-card
-    names="Dr. Nkosi"
-    image="assets/images/pod.jpg"
-    session="Pyschologist"
-    date="01-10-2022"
-    time="10:00"
-    />
+  </div>
+ 
+  
   </div>
 </ion-content>

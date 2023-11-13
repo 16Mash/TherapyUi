@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Upcoming</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-11/12 m-auto">
+    <p class="text-xl font-bold text-gray-500 my-3">New Request</p>
+    <div *ngFor="let item of request">
+      <div
+        class="w-full my-2 border border-dotted rounded border-therapyBlue p-3 text-gray-600 text-lg"
+      >
+        <p>Names :{{item.payload.doc.data().username}}</p>
+        <p>Type : {{item.payload.doc.data().type}}</p>
+        <br>
+        <app-button *ngIf="item.payload.doc.data().type=='chat'" (click)="openSession(item.payload.doc.data(),item.payload.doc.id)" label='Start Session' />
+      </div>
+    </div>
+  </div>
+</ion-content>
