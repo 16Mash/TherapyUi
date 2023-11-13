@@ -23,12 +23,7 @@ export class SessionPage implements OnInit {
 
   contactName = ''; 
   newMessage = '';
-  messages: any[] = [
-    { text: 'Hello!', sender: 'user', timestamp: new Date() },
-    { text: 'Hi there!', sender: 'contact', timestamp: new Date() },
-    { text: 'How are you', sender: 'contact', timestamp: new Date() },
-
-  ];
+  messages:any;
 
  
   constructor(    private _utils: UtilsService,
@@ -49,6 +44,9 @@ export class SessionPage implements OnInit {
     this.user = this._utils.getArray('thiduser');
     console.log(this.user);
     this.uid= localStorage.getItem('thid');
+    this.Database.chatService(this.ref).subscribe((res)=>{
+      this.messages=res
+    })
   }
   sendMessage() {
     if (this.newMessage.trim() !== '') {
@@ -58,7 +56,6 @@ export class SessionPage implements OnInit {
         timestamp: new Date(),
       };
       this.Database.SentChat(this.ref,this._utils.gerateUid(),message).then(()=>{
-        this.messages.push(message);
         this.newMessage = '';
       })
      
