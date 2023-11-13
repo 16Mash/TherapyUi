@@ -2,13 +2,13 @@
   <div class="w-full flex flex-wrap my-2">
   
   <div class="w-[20%]">
-    <img class=" m-auto w-8 h-8 rounded-full object-center" src="{{image}}" />
+    <img class=" m-auto w-8 h-8 rounded-full object-center" src={{coominity.img}} />
   </div>
    
     <div class="w-[80%]">
       <div class="flex flex-wrap" >
-        <p class="text-sm font-bold">{{names}}</p> &nbsp; &nbsp;
-        <p class="text-gray-400 text-sm">{{date}}</p>
+        <p class="text-sm font-bold"> Dr. {{coominity.poster}}</p> &nbsp; &nbsp;
+        <p class="text-gray-400 text-sm">{{coominity.date.toDate()| date:'dd-MM-YYYY'}}</p>
       </div>
       <p class="text-gray-700 text-sm">
       {{displayedText}} &nbsp;<br>
@@ -32,7 +32,7 @@
 
         <div class="w-1/5 float-right">
             <ion-button fill="clear">
-              <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+              <ion-icon slot="icon-only" name="arrow-redo-outline"></ion-icon>
             </ion-button>
         </div>
       

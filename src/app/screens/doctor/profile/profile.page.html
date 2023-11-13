@@ -1,0 +1,29 @@
+
+<ion-content [fullscreen]="true">
+  <div class="w-full   h-full" *ngIf="user">
+
+    <div class="bg-therapyBlue shadow-2xl  w-full h-[30vh] rounded-b-[50%] relative">
+
+      <img class="mx-auto absolute left-1/2 transform -translate-x-1/2 -bottom-[15%] rounded-full  h-36 w-36"
+        src="{{user.img}}" />
+
+    </div>
+    <br>
+    <div class="w-[92%] m-auto">
+
+      <div class="mt-[2%]">
+        <app-user-details text={{user.names}} icon="person-outline" />
+        <app-user-details text={{user.email}} icon="mail-outline" />
+        <app-user-details text="{{user.phone}}" icon="call-outline" />
+        <app-user-details text="Male" icon="male-female-outline" />
+        <app-user-details text="1996-March-08" icon="calendar-number-outline" />
+        
+      </div>
+      <div class="w-[96%] m-auto">
+        <app-outline-btn  text="logout" icon="exit" />
+      </div>
+      
+    </div>
+  </div>
+
+</ion-content>

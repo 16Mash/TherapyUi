@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-11/12 m-auto">
+    <!-- <p class="text-lg font-bold text-therapyBlue">Choose date</p>
+    <ion-datetime>
+
+    </ion-datetime> -->
+    <p class="text-gray-600 text-2xl font-bold my-4">Choose Session Type</p>
+
+    <form [formGroup]="bookForm">
+      <ion-radio-group name="auto" formControlName="type" value="tesla">
+        <!-- <ion-item class="">
+          <ion-label>
+            <div >
+              <ion-icon slot="start" name="chat"></ion-icon>
+            </div>
+          </ion-label>
+          <ion-radio value="tesla"></ion-radio>
+        </ion-item> -->
+        <div class="rounded items-center border justify-between flex py-2 px-4">
+          <div class="flex items-center space-x-1">
+            <div
+              class="w-14 h-14 rounded-full flex justify-center items-center bg-blue-300"
+            >
+              <ion-icon
+                size="large"
+                color="light"
+                name="chatbubble-ellipses"
+              ></ion-icon>
+            </div>
+            <div>
+              <p class="font-semibold text-therapyBlue text-lg">Messaging</p>
+              <p class="text-gray-500 text-xs">Chat with a Doctor</p>
+            </div>
+          </div>
+
+          <ion-radio class="justify-end" value="chat"></ion-radio>
+        </div>
+        <!-- <div class="rounded items-center border justify-between flex my-2 py-2 px-4">
+          <div  class="flex items-center space-x-1" >
+            <div class="w-14 h-14 rounded-full flex justify-center items-center bg-blue-300">
+              <ion-icon size="large" color="light" name="call"></ion-icon>
+            </div>
+            <div>
+              <p class="font-semibold text-therapyBlue text-lg">Virtual</p>
+              <p class="text-gray-500 text-xs " >Video call with a Doctor</p>
+            </div>
+          </div>
+        
+          <ion-radio class="justify-end" value="video"></ion-radio>
+        </div> -->
+        <div
+          class="rounded items-center border justify-between flex my-2 py-2 px-4"
+        >
+          <div class="flex items-center space-x-1">
+            <div
+              class="w-14 h-14 rounded-full flex justify-center items-center bg-blue-300"
+            >
+              <ion-icon size="large" color="light" name="person"></ion-icon>
+            </div>
+            <div>
+              <p class="font-semibold text-therapyBlue text-lg">In Person</p>
+              <p class="text-gray-500 text-xs">Visit the Doctor</p>
+            </div>
+          </div>
+
+          <ion-radio class="justify-end" value="person"></ion-radio>
+        </div>
+      </ion-radio-group>
+    </form>
+    <app-button (click)="book()" label="Make A Booking" />
+  </div>
+</ion-content>

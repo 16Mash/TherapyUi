@@ -14,6 +14,7 @@ export class CommunityCardComponent  implements OnInit {
   @Input() likes:string|undefined;
   @Input() comments:string|undefined;
   @Input() isComing:Boolean=true;
+  @Input() coominity:any;
 
  
   displayedText: string|undefined;
@@ -23,6 +24,7 @@ export class CommunityCardComponent  implements OnInit {
    }
 
   ngOnInit() {
+
     this.displayedText = this.getLimitedText(this.message);
     if(this.message.length>100)
     {

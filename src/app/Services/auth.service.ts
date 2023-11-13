@@ -34,6 +34,7 @@ export class AuthService {
           .set(user)
           .then((result) => {
             this._spinnner.dismiss();
+            localStorage.setItem('thiduser', JSON.stringify(user));
             this._router.navigateByUrl('/user');
            
           })
@@ -69,8 +70,8 @@ export class AuthService {
               localStorage.setItem('thiduser', JSON.stringify(data));
               if ( data.type == 'user') {
                 this._router.navigateByUrl('/user');
-              } else if (data.type == 'docter') {
-                this._router.navigateByUrl('/docter');
+              } else if (data.type == 'doctor') {
+                this._router.navigateByUrl('/doctor');
               }  else {
                 this._spinnner.dismiss();
                 this._spinnner.presentAlert("Coulnt find your profile","Error")

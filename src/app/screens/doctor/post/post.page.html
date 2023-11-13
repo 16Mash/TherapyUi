@@ -1,0 +1,34 @@
+<ion-header color="primary" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Post New </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-11/12 m-auto my-3">
+
+    <p class="text-3xl font-bold text-gray-500 ">Create New Post</p>
+    <br>
+    <form [formGroup]="postForm" >
+    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+    <textarea formControlName="message" id="message" rows="4"
+      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-therapyBlue focus:border-therapyBlue dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-therapyBlue dark:focus:border-therapyBlue"
+      placeholder="Write your thoughts here..."></textarea>
+      <div *ngIf=" postForm.controls?.['message'] && postForm.controls['message'].touched" class="ml-2 font-light text-red-600 justify-start space-y-0">
+        <div class="text-start" >
+         <p *ngIf = "postForm.get('message')!.hasError('required')">Message is required.</p>
+      
+    
+        </div>
+        </div>
+    </form>
+      <br>
+    <app-button (click)="postCommunity()" label="Post"/>
+  </div>
+
+
+
+</ion-content>

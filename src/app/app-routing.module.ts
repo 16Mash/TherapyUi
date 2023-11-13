@@ -53,7 +53,7 @@ const routes: Routes = [
   },
 
   {
-    path:'docter',
+    path:'doctor',
     component:DocternavbarComponent,
     children:[
       {
@@ -65,6 +65,10 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () => import('./screens/doctor/doctorhome/doctorhome.module').then( m => m.DoctorhomePageModule)
+      },
+      {
+        path: 'home/profile',
+        loadChildren: () => import('./screens/doctor/profile/profile.module').then( m => m.ProfilePageModule)
       },
       {
         path: 'notifications',
@@ -93,16 +97,42 @@ const routes: Routes = [
     loadChildren: () => import('./screens/resetpasword/resetpasword.module').then( m => m.ResetpaswordPageModule)
   },
   {
-    path: 'doctordetails',
+    path: 'doctordetails/:id',
     loadChildren: () => import('./screens/doctor/doctordetails/doctordetails.module').then( m => m.DoctordetailsPageModule)
   },
   {
     path: 'settings',
     loadChildren: () => import('./screens/settings/settings.module').then( m => m.SettingsPageModule)
-  },  {
+  },
+  {
     path: 'session',
     loadChildren: () => import('./screens/session/session.module').then( m => m.SessionPageModule)
   },
+  {
+    path: 'booking',
+    loadChildren: () => import('./screens/booking/booking.module').then( m => m.BookingPageModule)
+  },
+  {
+    path: 'zoom-meeting',
+    loadChildren: () => import('./screens/zoom-meeting/zoom-meeting.module').then( m => m.ZoomMeetingPageModule)
+  },
+  {
+    path: 'post',
+    loadChildren: () => import('./screens/doctor/post/post.module').then( m => m.PostPageModule)
+  },
+  {
+    path: 'request',
+    loadChildren: () => import('./screens/doctor/request/request.module').then( m => m.RequestPageModule)
+  },
+  {
+    path: 'requestdetails/:id',
+    loadChildren: () => import('./screens/doctor/requestdetails/requestdetails.module').then( m => m.RequestdetailsPageModule)
+  },
+
+
+
+
+
 
  
 

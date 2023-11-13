@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Request Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-11/12 m-auto my-3" *ngIf="request">
+
+    <div  class="w-full  my-2 border border-dotted rounded border-therapyBlue p-3 text-gray-600 text-lg">
+      <p>Names :{{request.username}} </p>
+      <p>Type  : {{request.type}}</p>
+    </div>
+
+  </div>
+</ion-content>

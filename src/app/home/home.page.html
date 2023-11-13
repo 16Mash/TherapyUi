@@ -31,11 +31,11 @@
 </ion-header>
 <ion-content>
   <div class="container">
-    <h1 class="book">Book Now</h1>
+    <h1 class="book text-therapyBlue">Book Now</h1>
     <!-- Doctor Details -->
 
-    <div class="doc-list space-x-1">
-      <div routerLink="/doctordetails" class="block">
+    <div class="doc-list space-x-1" *ngFor="let item of doctors">
+      <!-- <div routerLink="/doctordetails" class="block">
         <div class="imgbx">
           <img src="assets/images/therapist.jpg" class="cover" />
         </div>
@@ -45,98 +45,15 @@
             <p>Therapist</p>
           </div>
           <div class="name-time">
-            <h4>Dr Aubrey Mashaba</h4>
+            <h4>Dr {{item.payload.doc.data().names}}</h4>
 
             <ion-icon icon="time"></ion-icon>
             <p class="time">14:05 - 16:30</p>
           </div>
         </div>
-      </div>
-      <div class="block">
-        <div class="imgbx">
-          <img src="assets/images/pod.jpg" class="cover" />
-        </div>
-
-        <div class="doc-details">
-          <div class="type">
-            <p>Podriatrist</p>
-          </div>
-          <div class="name-time">
-            <h4>Dr Patience Shivambhu</h4>
-
-            <ion-icon icon="time"></ion-icon>
-            <p class="time">15:25 - 17:36</p>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="imgbx">
-          <img src="assets/images/rams.jpeg" class="cover" />
-        </div>
-
-        <div class="doc-details">
-          <div class="type">
-            <p>Physiologist</p>
-          </div>
-          <div class="name-time">
-            <h4>Dr Morena Maphosa</h4>
-
-            <ion-icon icon="time"></ion-icon>
-            <p class="time">15:25 - 17:36</p>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="imgbx">
-          <img src="assets/images/pod.jpg" class="cover" />
-        </div>
-
-        <div class="doc-details">
-          <div class="type">
-            <p>Physiologist</p>
-          </div>
-          <div class="name-time">
-            <h4>Dr Andries Kunutu</h4>
-
-            <ion-icon icon="time"></ion-icon>
-            <p class="time">15:25 - 17:36</p>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="imgbx">
-          <img src="assets/images/rams.jpeg" class="cover" />
-        </div>
-
-        <div class="doc-details">
-          <div class="type">
-            <p>Physiologist</p>
-          </div>
-          <div class="name-time">
-            <h4>Dr Morena Maphosa</h4>
-
-            <ion-icon icon="time"></ion-icon>
-            <p class="time">15:25 - 17:36</p>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="imgbx">
-          <img src="assets/images/rams.jpeg" class="cover" />
-        </div>
-
-        <div class="doc-details">
-          <div class="type">
-            <p>Physiologist</p>
-          </div>
-          <div class="name-time">
-            <h4>Dr Morena Maphosa</h4>
-
-            <ion-icon icon="time"></ion-icon>
-            <p class="time">15:25 - 17:36</p>
-          </div>
-        </div>
-      </div>
+      </div> -->
+      <app-doctorcard routerLink="/doctordetails/{{item.payload.doc.id}}" router [doc]="item.payload.doc.data()" />
+  
     </div>
 
     <div class="tab"></div>
