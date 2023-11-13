@@ -101,4 +101,9 @@ export class FirestoreService {
           })
       });
   }
+
+  readSubDoc(collection:any,doc:any, subCollection:any)
+  {
+   return this._AngularFirestore.collection(collection).doc(doc).collection(subCollection).valueChanges()
+  }
 }

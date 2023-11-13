@@ -13,7 +13,7 @@ export class SessionPage implements OnInit {
 
   chat:boolean=false;
   video:boolean=false;
-  call:boolean=false;
+  open:boolean=false;
   user: any;
   comm:any;
   comming:any;
@@ -36,9 +36,14 @@ export class SessionPage implements OnInit {
     this.ref = this._rout.snapshot.paramMap.get('id');
     this.uid= localStorage.getItem('thid');
     console.log(this.ref);
+    this.user = this._utils.getArray('thiduser');
     this.Database.readDataById('Sessions', this.ref).subscribe((res) => {
       console.log(res);
       this.request = res;
+      if(this.request.status=="Started")
+      {
+        this.open=true
+      }
       this._utils.dismiss();
     });
     this.user = this._utils.getArray('thiduser');

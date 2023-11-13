@@ -132,6 +132,13 @@ const routes: Routes = [
     path: 'upcomming',
     loadChildren: () => import('./screens/doctor/upcomming/upcomming.module').then( m => m.UpcommingPageModule)
   },
+  {
+    path: 'active',
+    loadChildren: () => import('./screens/doctor/active/active.module').then( m => m.ActivePageModule)
+  },
+
+ 
+
 
 
 

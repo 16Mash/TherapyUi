@@ -27,20 +27,16 @@
   </div>
 
   <div class="flex flex-wrap w-full mt-4">
-    <div class="flex flex-wrap w-full mt-4" *ngIf="session.status==='Accepted' && session.type==='chat'; else comp">
-      <div class="w-1/2">
-        <ion-button> Reschedule </ion-button>
-      </div>
-      <div class="w-1/2">
-        <ion-button fill="clear" class="font-black"> Join Now </ion-button>
+    <div class="flex flex-wrap w-full mt-4" *ngIf="session.status==='Accepted' ||session.status==='Started' && session.type==='chat'; else comp">
+      
+      <div class="w-1/2" *ngIf="session.status==='Started' && session.type==='chat';">
+        
+        <ion-button fill="clear" (click)="navigate('/session/'+id)" class="font-black"> Join Now </ion-button>
       </div>
     </div>
     <ng-template #comp>
       <div class="w-1/2">
-        <ion-button> Re-Book</ion-button>
-      </div>
-      <div class="w-1/2">
-        <ion-button fill="clear" class="font-black"> history </ion-button>
+        <ion-button fill="clear" (click)="navigate('/session/'+id)" class="font-black"> history </ion-button>
       </div>
     </ng-template>
   </div>

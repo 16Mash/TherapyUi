@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Upcoming</ion-title>
+    <ion-title>Active</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,7 +17,8 @@
         <p>Names :{{item.payload.doc.data().username}}</p>
         <p>Type : {{item.payload.doc.data().type}}</p>
         <br>
-        <app-button *ngIf="item.payload.doc.data().type==='chat'" (click)="openSession(item.payload.doc.data(),item.payload.doc.id)" label='Start Session' />
+        <app-button *ngIf="item.payload.doc.data().type==='chat'" (click)="openSession(item.payload.doc.data(),item.payload.doc.id)" label='Cotinue' />
+        <app-button label="End Session" (click)="EndSession(item.payload.doc.data(),item.payload.doc.id)" />
       </div>
     </div>
   </div>

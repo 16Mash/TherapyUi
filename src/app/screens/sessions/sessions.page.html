@@ -6,14 +6,14 @@
 
 <ion-content>
   <div class="w-11/12 mx-auto mt-[5%]">
-    <div class="rounded-[12px] bg-therapyLight bg-opacity-50 p-[4%] w-full">
+    <div *ngIf="active" class="rounded-[12px] bg-therapyLight bg-opacity-50 p-[4%] w-full">
       <ion-text>
         <h1 class="m-1 text-white text-2xl font-extrabold">Upcoming Session</h1>
       </ion-text>
-      <p class="m-1 text-gray-500">Dr. Mash, Psychology</p>
-      <p class="text-gray-700 m-1 font-semibold">07:30 PM - 08:30 PM</p>
+      <p class="m-1 text-gray-500">Dr. {{active.payload.doc.data().docterName}}</p>
+      <p class="text-gray-700 m-1 font-semibold">{{active.payload.doc.data().time}}</p>
 
-      <ion-button fill="clear" class="font-black">
+      <ion-button  routerLink="/session/{{active.payload.doc.id}}"   fill="clear" class="font-black">
         <ion-icon slot="end" name="play-circle"></ion-icon>
         Join Now
       </ion-button>
@@ -26,21 +26,31 @@
           interface="popover"
           placeholder="Sessions"
           [(ngModel)]="selectedSession"
+          (ionChange)="onSessionChange()"
         >
-          <ion-select-option value="all">All Sessions</ion-select-option>
           <ion-select-option value="Accepted"
             >Upcoming Sessions</ion-select-option
           >
-          <ion-select-option value="history"
+          <ion-select-option value="Started"
+          >Active</ion-select-option
+        >
+          <ion-select-option value="History"
             >Competed Sessions</ion-select-option
           >
+          <ion-select-option value="rejected"
+          >Rejected Sessions</ion-select-option
+        >
         </ion-select>
+
+        
+        
       </ion-item>
     </ion-list>
 
     
   <div *ngFor="let item of request" >
     <app-session-card
+    [id]="item.payload.doc.id"
     [session]="item.payload.doc.data()"
 
     />

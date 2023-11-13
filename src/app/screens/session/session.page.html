@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/chat-list"></ion-back-button>
+      <ion-back-button ></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ contactName }}</ion-title>
+    <ion-title>Chat Session</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,14 +19,13 @@
 
 </ion-content>
 
-<div class="flex p-[10px] items-center">
+<div *ngIf="open ; else no" class="flex p-[10px] items-center">
   <ion-input class="border rounded-full !px-4" [(ngModel)]="newMessage"
     placeholder="Type your message"></ion-input> 
   <ion-button class="" fill="clear" shape="round" (click)="sendMessage()" >
-    
-   
-     <ion-icon *ngIf="newMessage.length>0;"  slot="icon-only" name="send-sharp"></ion-icon>
-     <ion-icon *ngIf="newMessage.length==0;"  slot="icon-only" name="mic"></ion-icon>
-
+     <ion-icon   slot="icon-only" name="send-sharp"></ion-icon>   
   </ion-button>
 </div>
+<ng-template #no>
+  <p class="p-4 text-lg text-center">Session has been ended</p>
+</ng-template>

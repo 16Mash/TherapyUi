@@ -10,11 +10,13 @@ import { UtilsService } from 'src/app/Services/utils.service';
   styleUrls: ['./sessions.page.scss'],
 })
 export class SessionsPage implements OnInit {
-  selectedSession: string = 'all';
+  selectedSession: string = 'Accepted';
   user: any;
   comm:any;
   comming:any;
   request:any;
+  actives:any
+  active:any
   uid:any;
   constructor(    private _utils: UtilsService,
     private database: FirestoreService,
@@ -25,14 +27,26 @@ export class SessionsPage implements OnInit {
     this.user = this._utils.getArray('thiduser');
     console.log(this.user);
     this.uid= localStorage.getItem('thid');
-    this.database.UserSessions("Sessions",this.uid,"Accepted").snapshotChanges().subscribe(res=>{
+    this.database.UserSessions("Sessions",this.uid,this.selectedSession).snapshotChanges().subscribe(res=>{
       this.request = res
+      console.log(res)
+    })
+
+    this.database.UserSessions("Sessions",this.uid,"Started").snapshotChanges().subscribe(res=>{
+      this.actives = res
+      this.active = this.actives[0];
       console.log(res)
     })
   }
 
-  change(){
-    
+
+  
+  onSessionChange() {
+
+    this.database.UserSessions("Sessions",this.uid,this.selectedSession).snapshotChanges().subscribe(res=>{
+      this.request = res
+      console.log(res)
+    })
   }
 
 }
