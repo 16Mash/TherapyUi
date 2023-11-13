@@ -12,7 +12,7 @@
     <div class=" h-fit my-1 float-left w-full ">
       <div class="message-bubble p-[10px] rounded-xl  w-fit w-max-[70%]">
         <p class="text-white"> {{message.text}} </p>
-        <p class="text-xs w-full text-right">{{ message.timestamp | date:'mediumTime' }}</p>
+        <p class="text-xs w-full text-right">{{ message.timestamp.toDate() | date:'mediumTime' }}</p>
       </div>
     </div>
   </div> 
