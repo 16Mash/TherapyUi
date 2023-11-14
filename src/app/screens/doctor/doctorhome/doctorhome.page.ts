@@ -14,6 +14,9 @@ export class DoctorhomePage implements OnInit {
   comming:any;
   request:any;
   uid:any;
+  active:any;
+  upcoming:any;
+  countRequest:any;
   constructor(
     private _utils: UtilsService,
     private database: FirestoreService,
@@ -33,5 +36,18 @@ export class DoctorhomePage implements OnInit {
     })
 
     //this.database.countRequest("Sessions",this.uid,"new").pipe(map((document)=>(doocuments ? document.len) ))
+  
+    this.database.countRequest("Sessions",this.uid,"new").snapshotChanges().subscribe(res=>{
+      this.request = res
+      console.log(res)
+    })
+    this.database.countRequest("Sessions",this.uid,"active").snapshotChanges().subscribe(res=>{
+      this.request = res
+      console.log(res)
+    })
+    this.database.countRequest("Sessions",this.uid,"upcoming").snapshotChanges().subscribe(res=>{
+      this.request = res
+      console.log(res)
+    })
   }
 }

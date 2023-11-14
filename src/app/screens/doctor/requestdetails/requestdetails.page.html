@@ -23,7 +23,7 @@
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
             <ion-datetime [(ngModel)]="date" [showDefaultButtons]="true" presentation="date" [isDateEnabled]="isWeekday" id="startdate"
-              >
+            min="{{CurrentDate | date:'yyyy-MM-dd'}}" >
             </ion-datetime>
           </ng-template>
         </ion-modal>

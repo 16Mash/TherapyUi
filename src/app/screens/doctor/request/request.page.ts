@@ -14,6 +14,7 @@ export class RequestPage implements OnInit {
   comming:any;
   request:any;
   uid:any;
+  countRequest:any;
   constructor(
     private _utils: UtilsService,
     private database: FirestoreService,

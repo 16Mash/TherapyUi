@@ -13,6 +13,7 @@ export class RequestdetailsPage implements OnInit {
   ref: any;
   request: any;
   date!:Date;
+  CurrentDate:any = new Date();
   selectedDate!: string;
   hoursArray: string[] = [
     '08:00',
