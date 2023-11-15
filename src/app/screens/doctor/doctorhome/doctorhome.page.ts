@@ -46,12 +46,12 @@ export class DoctorhomePage implements OnInit {
       console.log("New Requests: ", this.newRequests.length);
       this.new = this.newRequests.length
     })
-    this.database.countRequest("Sessions",this.uid,"active").snapshotChanges().subscribe(res=>{
+    this.database.countRequest("Sessions",this.uid,"Started").snapshotChanges().subscribe(res=>{
       this.activeRequests = res;
       console.log("Active Requests: ", this.activeRequests.length);
       this.active=this.activeRequests.length
     })
-    this.database.countRequest("Sessions",this.uid,"upcoming").snapshotChanges().subscribe(res=>{
+    this.database.countRequest("Sessions",this.uid,"Accepted").snapshotChanges().subscribe(res=>{
       this.upcomingRequests = res;
       console.log("Upcoming Requests: ", this.upcomingRequests.length);
       this.coming = this.upcomingRequests.length
