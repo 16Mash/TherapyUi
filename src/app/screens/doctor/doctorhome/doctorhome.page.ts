@@ -14,8 +14,9 @@ export class DoctorhomePage implements OnInit {
   comming:any;
   request:any;
   uid:any;
-  active:any;
-  upcoming:any;
+  newRequests:any;
+  activeRequests:any;
+  upcomingRequests:any;
   countRequest:any;
   constructor(
     private _utils: UtilsService,
@@ -38,17 +39,16 @@ export class DoctorhomePage implements OnInit {
     //this.database.countRequest("Sessions",this.uid,"new").pipe(map((document)=>(doocuments ? document.len) ))
   
     this.database.countRequest("Sessions",this.uid,"new").snapshotChanges().subscribe(res=>{
-      this.request = res
-      console.log(res)
+      this.newRequests = res;
+      console.log("New Requests: ", this.newRequests.length);
     })
     this.database.countRequest("Sessions",this.uid,"active").snapshotChanges().subscribe(res=>{
-      this.request = res
-      
-      console.log(res)
+      this.activeRequests = res;
+      console.log("Active Requests: ", this.activeRequests.length);
     })
     this.database.countRequest("Sessions",this.uid,"upcoming").snapshotChanges().subscribe(res=>{
-      this.request = res
-      console.log(res.length)
+      this.upcomingRequests = res;
+      console.log("Upcoming Requests: ", this.upcomingRequests.length);
     })
   }
 }
